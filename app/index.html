@@ -8,6 +8,8 @@
 	<title>Title</title>
 	<meta name="description" content="">
 
+	<base href="/">
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -24,11 +26,9 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
-	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
-
 </head>
 
-<body>
+<body ng-app="SmartOfficeApp" ng-controller="mainController">
 
 	<div class="container">
 
@@ -36,10 +36,12 @@
 
 			<div class="col-sm-8 col-sm-offset-2">
 				
-				<img class="img-responsive" src="img/preview.jpg" alt="Start HTML5 Template">
-				<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Пустился снова, силуэт сих снова не коварный за языкового текста до рекламных, агенство возвращайся, буквенных жизни это, первую переулка правилами?</p>
-				<p>Наш, приставка страна единственное большой, власти, злых, взобравшись семь рот он алфавит осталось вершину курсивных сих всемогущая буквенных предупредила залетают необходимыми эта но вдали имеет ты? Предупреждал повстречался, но которое!</p>
-				<p>Злых, знаках свою. Выйти по всей рукописи запятой дороге маленький дорогу, все вопроса переулка необходимыми точках повстречался текстов наш приставка одна над страна последний, за имеет ты всемогущая предложения рот скатился.</p>
+				<h1>{{greeting}}</h1>
+				<a href="settings">Settings</a>
+				<a href="orders">Orders</a>
+				<div ng-view>
+					
+				</div>
 
 			</div>
 			
@@ -48,6 +50,9 @@
 	</div>
 	
 	<link rel="stylesheet" href="css/main.min.css">
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="js/controllers/mainController.js"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>
