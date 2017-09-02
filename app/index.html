@@ -8,7 +8,7 @@
 	<title>Title</title>
 	<meta name="description" content="">
 
-	<base href="/">
+	<base href="/"/>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -26,34 +26,99 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
 </head>
 
 <body ng-app="SmartOfficeApp" ng-controller="mainController">
 
+	<header ng-show="isLoggedIn()">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarToggle">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><img style="width: 64px;" src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills">
+						</a>
+					</div>
+					<div class="navbar-collapse collapse" id="navbarToggle" ng-init="navMenuActiveItem = 1">
+						<ul class="nav navbar-nav navbar-right">
+							<li ng-show="currentUser.accessLevel == 3 || currentUser.accessLevel == 4" ng-class="{'active': navMenuActiveItem == 1}" ng-click="navMenuActiveItem = 1">
+								<a href="services">Услуги</a>
+							</li>
+							<li ng-class="{'active': navMenuActiveItem == 2}" ng-click="navMenuActiveItem = 2">
+								<a href="orders">Заявки</a>
+							</li>
+							<li>
+								<a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									Уведомления 
+									<span class="badge badge-pill badge-danger">3</span>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<div>
+									<a class="dropdown-item" href="orders">
+											<b>Заявка #100007</b><br>
+											Новое сообщение менеджера<br>
+											<small>19 минут назад</small>
+										</a>
+									</div>
+									<div class="dropdown-divider"></div>
+									<div>
+										<a class="dropdown-item" href="orders">
+											<b>Заявка #100005</b><br>
+											Изменился статус<br>
+											<small>27 минут назад</small>
+										</a>
+									</div>
+									<div class="dropdown-divider"></div>
+									<div>
+										<a class="dropdown-item" href="orders">
+											<b>Заявка #100003</b><br>
+											Новое системное сообщение<br>
+											<small>48 минут назад</small>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li ng-class="{'active': navMenuActiveItem == 4}" ng-click="navMenuActiveItem = 4">
+								<a href="settings">Настройки</a>
+							</li>
+							<li ng-show="currentUser.accessLevel == 1 || currentUser.accessLevel == 3" ng-class="{'active': navMenuActiveItem == 5}" ng-click="navMenuActiveItem = 5">
+								<a href="admin">Администратор</a>
+							</li>
+							<li>
+								<a href="login">Выход</a>
+							</li>
+						</ul>
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+				<!--/.container-fluid -->
+			</nav>
+
+		</div>
+	</header>
+
 	<div class="container">
 
-		<div class="row">
+		<div ng-view>
 
-			<div class="col-sm-8 col-sm-offset-2">
-				
-				<h1>{{greeting}}</h1>
-				<a href="settings">Settings</a>
-				<a href="orders">Orders</a>
-				<div ng-view>
-					
-				</div>
-
-			</div>
-			
 		</div>
 
 	</div>
-	
-	<link rel="stylesheet" href="css/main.min.css">
+
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
-	<script src="js/controllers/mainController.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/scripts.min.js"></script>
+	<script src="js/controllers/mainController.js"></script>
 
 </body>
 </html>

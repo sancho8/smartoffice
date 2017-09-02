@@ -36,20 +36,149 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+	width: 100%
 
-body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.75
-	font-family: $default-font
-	overflow-x: hidden
-	opacity: 1
+.navbar-brand 
+  display: flex
+  align-items: center
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-	border: 5px solid blue
+.navbar-brand>img 
+  padding: 7px 14px
+
+.container
+  padding: 0
+  width: 100%
+
+.navbar-nav
+  li 
+    font-size: 16px
+
+.services-frame
+  animation: SlideDown 1s ease
+  padding-top: 50px
+  padding-bottom: 50px
+
+.service-list
+  padding-left: 20px
+  padding-right: 20px
+  a
+    padding-left: 20px
+    padding-right: 20px
+    font-size: 16px
+
+.services-heading
+  padding-bottom: 20px
+  font-size: 28px
+
+.form-container
+  .control-label
+    padding-bottom: 5px
+
+.panel-title
+  font-size: 20px
+
+.orders-frame
+  animation: SlideDown 1s ease
+  padding: 30px
+  .panel-footer
+    background: none
+
+.orders-list
+  a
+    text-align: center
+
+.no-padding
+  padding: 0 !important
+
+.settings-frame
+  animation: SlideDown 1s ease
+  padding: 30px
+  padding-top: 10px
+
+.login-frame
+  padding-top: 100px
+  .form-group
+    button 
+      width: 100%
+
+.section-header
+  font-size: 24px
+  padding: 20px
+  padding-left: 0
+  font-weight: bold
+
+.section-header-secondary
+  font-size: 18px
+  padding: 10px
+  padding-left: 0
+  font-weight: bold
+
+.singleOrderContainer
+  animation: SlideDown 1s ease
+  padding-left: 30px
+  .order-description
+    font-size: 16px
+    .bold
+      font-weight: bold
+  .card
+    border: 2px solid #D0D0D0
+    border-radius: 5px
+    margin-bottom: 15px
+    margin-left: 15px
+    margin-right: 25px
+    &.new-card
+      border: 2px solid #00CC00
+    .card-block
+      padding: 10px
+      font-size: 16px
+    .card-header
+      padding: 10px
+      background: #F0F0F0
+      font-size: 16px
+      height: 40px
+
+.badge-danger
+  background-color: #d9534f
+
+.dropdown-toggle::after 
+  display: inline-block
+  width: 0
+  height: 0
+  margin-left: 0.3em
+  vertical-align: middle
+  content: ""
+  border-top: 0.3em solid
+  border-right: 0.3em solid transparent
+  border-left: 0.3em solid transparent
+
+.dropdown-menu
+  width: 300px
+  div
+    padding: 5px
+    padding-left: 15px
+
+.dropdown-divider
+  border-bottom: 2px solid #F0F0F0
+
+a.dropdown-item
+  text-align: center
+  text-decoration: none
+  color: #505050
+
+.float-right
+  float: right
+.float-left
+  float: left
+
+.service-item-frame
+  animation: SlideDown 1s ease
+
+@keyframes SlideDown
+  0% 
+    margin-top: -100px
+    opacity: 0
+  100%
+    margin-top: 0
+    opacity: 1
 
 @import "media" // Всегда в конце

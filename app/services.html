@@ -1,0 +1,82 @@
+<div class="container services-frame">
+	<div class="row">
+		<div class="col-md-3 col-lg-3 col-md-offset-1 col-lg-offset-1 col sm-12 col-xs-12">
+			<div class="list-group service-list" ng-init="activeMenuSection = 1">
+				<a class="list-group-item" ng-class="{'active': activeMenuSection==1}" 
+				href="" ng-click="activeMenuSection = 1">Уcлуга 1</a>
+				<a class="list-group-item"  ng-class="{'active': activeMenuSection==2}" 
+				href="" ng-click="activeMenuSection = 2">Уcлуга 2</a>
+				<a class="list-group-item"  ng-class="{'active': activeMenuSection==3}" 
+				href="" ng-click="activeMenuSection = 3">Уcлуга 3</a>
+				<a class="list-group-item"  ng-class="{'active': activeMenuSection==4}" 
+				href="" ng-click="activeMenuSection = 4">Уcлуга 4</a>
+				<a class="list-group-item"  ng-class="{'active': activeMenuSection==5}" 
+				href="" ng-click="activeMenuSection = 5">Уcлуга 5</a>
+			</div>
+		</div>
+		<div class="col-md-8 col-lg-8 col sm-12 col-xs-12">
+			<div class="services-heading">
+				Форма для заполнения Услуги
+			</div>
+			<div class="form-container col-md-6 col-lg-6 no-padding">
+				<div class="service-item-frame" ng-show="activeMenuSection == 1">
+
+					<form>
+						<div class="form-group">
+							<label for="location">Где встретить?</label>
+							<input type="text" class="form-control" id="location">
+						</div>
+						<div class="form-group">
+							<label for="guest_name">Фамилия и Имя гостя</label>
+							<input type="text" class="form-control" id="guest_name">
+						</div>
+						<div class="form-group">
+							<label for="visit_datetime">Дата и время визита</label>
+							<input type="datetime-local" class="form-control" id="visit_datetime" value="2017-05-20T13:45:00">
+						</div>
+						<div class="form-group">
+							<label for="vehicle">Автомобиль (марка и номера)</label>
+							<input type="text" class="form-control" id="vehicle">
+						</div>
+						<div class="form-group">
+							<label for="language">Язык общения</label>
+							<select class="form-control" id="language">
+								<option>Русский</option>
+								<option>Украинский</option>
+								<option>Английский</option>
+								<option>Французский</option>
+								<option>Немецкий</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="attendants">Количество гостей</label>
+							<input type="number" class="form-control" id="attendants" value="1">
+						</div>
+						<div class="form-group">
+							<label for="comment">Комментарий</label>
+							<textarea class="form-control" id="comment" rows="4"></textarea>
+						</div>
+
+						<a href="feed-new.html" class="btn btn-primary">Отправить запрос</a>
+					</form>
+
+				</div>
+
+				<div class="service-item-frame" ng-show="activeMenuSection == 2">
+					<form >
+						<div class="form-group">
+							<label for="vehicle">Автомобиль (марка и номера)</label>
+							<input type="text" class="form-control" id="vehicle">
+						</div>
+						<div class="form-group">
+							<label for="comment">Комментарий</label>
+							<textarea class="form-control" id="comment" rows="4"></textarea>
+						</div>
+
+						<a href="" class="btn btn-primary">Отправить запрос</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
