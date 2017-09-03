@@ -1,0 +1,16 @@
+{
+  "name": "smartoffice",
+  "scripts": {
+    "postdeploy": "app.js"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
